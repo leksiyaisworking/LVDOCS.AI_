@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль — LVDOCS.AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 3 H26 L34 11 V37 H6 Z" fill="#9E3039"/>
+                    <path d="M26 3 V11 H34 Z" fill="#7a252c"/>
+                    <rect x="6" y="20" width="28" height="5" fill="#ffffff"/>
+                    <path d="M20 13 L21.5 17 L25.5 18.5 L21.5 20 L20 24 L18.5 20 L14.5 18.5 L18.5 17 Z" fill="#ffffff"/>
+                </svg>
+                <span class="logo-text">LVDOCS<span class="ai">.AI</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+                <li><a href="check.html" data-i18n="nav.check">Проверка</a></li>
+                <li><a href="ocr.html" data-i18n="nav.ocr">Распознавание</a></li>
+                <li><a href="docs.html" data-i18n="nav.docs">Документы</a></li>
+                <li><a href="analyze.html" data-i18n="nav.analyze">ИИ-проверка</a></li>
+                <li><a href="profile.html" class="active" data-i18n="nav.profile">Профиль</a></li>
+                <li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+            </ul>
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn" data-lang="lv"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#9E3039"/><rect y="6.4" width="24" height="3.2" fill="#fff"/></svg>LV</button>
+                <button type="button" class="lang-btn" data-lang="ru"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="5.34" fill="#fff"/><rect y="5.33" width="24" height="5.34" fill="#0039A6"/><rect y="10.66" width="24" height="5.34" fill="#D52B1E"/></svg>RU</button>
+                <button type="button" class="lang-btn" data-lang="en"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#012169"/><path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="5.2"/><path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"/></svg>EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 data-i18n="profile.title">Профиль</h1>
+        <p class="lead" data-i18n="profile.lead">Здесь хранятся ваши документы.</p>
+
+        <div id="profileContent"></div>
+    </main>
+
+    <footer>
+        © 2026 LVDOCS.AI <span class="flag-stripe"></span> <span data-i18n="footer.note">Сделано в Латвии</span>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        function renderProfile() {
+            const docs = getProfileDocuments();
+            const box = document.getElementById('profileContent');
+
+            if (docs.length === 0) {
+                box.innerHTML = `<div class="docs-intro"><p>${t('profile.empty')}</p></div>`;
+                return;
+            }
+
+            box.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+                    <h2 style="margin:0;">${t('profile.count')}:
+                        <span style="color:var(--latvia-red);">${docs.length}</span></h2>
+                    <span style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a class="btn" href="analyze.html">${t('profile.run_ai')}</a>
+                        <button class="btn btn-secondary" onclick="clearAll()">${t('profile.clear')}</button>
+                    </span>
+                </div>
+                <div class="grid">
+                    ${docs.map(d => `
+                        <div class="card">
+                            ${d.photo ? `<img src="${d.photo}" alt="" style="width:100%; height:180px; object-fit:cover; border-radius:8px; border:1px solid var(--border); margin-bottom:14px;">` : ''}
+                            <h3>${d.type ? t('doctype.' + d.type) : (d.doc_type || '')}</h3>
+                            ${d.number ? `<p><b>${d.number}</b></p>` : ''}
+                            ${d.full_name ? `<p>${d.full_name}</p>` : ''}
+                            <p style="font-size:13px; color:var(--text-gray);">${new Date(d.savedAt).toLocaleDateString(getLang())}</p>
+                            <button class="btn btn-secondary" style="margin-top:14px; padding:8px 16px; font-size:13px;"
+                                    onclick="removeDoc('${d.id}')">${t('profile.delete')}</button>
+                        </div>`).join('')}
+                </div>`;
+        }
+
+        function removeDoc(id) {
+            removeFromProfile(id);
+            renderProfile();
+        }
+
+        function clearAll() {
+            if (confirm('OK?')) {
+                clearProfile();
+                renderProfile();
+            }
+        }
+
+        document.addEventListener('langchange', renderProfile);
+        renderProfile();
+    </script>
+</body>
+</html>

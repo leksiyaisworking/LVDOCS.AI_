@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVDOCS.AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 3 H26 L34 11 V37 H6 Z" fill="#9E3039"/>
+                    <path d="M26 3 V11 H34 Z" fill="#7a252c"/>
+                    <rect x="6" y="20" width="28" height="5" fill="#ffffff"/>
+                    <path d="M20 13 L21.5 17 L25.5 18.5 L21.5 20 L20 24 L18.5 20 L14.5 18.5 L18.5 17 Z" fill="#ffffff"/>
+                </svg>
+                <span class="logo-text">LVDOCS<span class="ai">.AI</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-i18n="nav.home">Главная</a></li>
+                <li><a href="check.html" data-i18n="nav.check">Проверка</a></li>
+                <li><a href="ocr.html" data-i18n="nav.ocr">Распознавание</a></li>
+                <li><a href="docs.html" data-i18n="nav.docs">Документы</a></li>
+                <li><a href="analyze.html" data-i18n="nav.analyze">ИИ-проверка</a></li>
+                <li><a href="profile.html" data-i18n="nav.profile">Профиль</a></li>
+                <li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+            </ul>
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn" data-lang="lv"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#9E3039"/><rect y="6.4" width="24" height="3.2" fill="#fff"/></svg>LV</button>
+                <button type="button" class="lang-btn" data-lang="ru"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="5.34" fill="#fff"/><rect y="5.33" width="24" height="5.34" fill="#0039A6"/><rect y="10.66" width="24" height="5.34" fill="#D52B1E"/></svg>RU</button>
+                <button type="button" class="lang-btn" data-lang="en"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#012169"/><path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="5.2"/><path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"/></svg>EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 data-i18n="hero.title">Проверка документов<br>быстро и надёжно</h1>
+            <p class="lead" data-i18n="hero.text">Загружайте документы, проверяйте подлинность и распознавайте текст с изображений.</p>
+            <a href="check.html" class="btn" data-i18n="hero.btn_check">Проверить документ</a>
+            <a href="ocr.html" class="btn btn-secondary" data-i18n="hero.btn_ocr">Распознать текст</a>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h3 data-i18n="card.check_title">Проверка документов</h3>
+                <p data-i18n="card.check_text">Введите номер — система сверит его с базой.</p>
+                <a href="check.html" data-i18n="card.go">Перейти →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3 data-i18n="card.ocr_title">Распознавание JPEG</h3>
+                <p data-i18n="card.ocr_text">Извлеките текст из изображений.</p>
+                <a href="ocr.html" data-i18n="card.go">Перейти →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛂</div>
+                <h3 data-i18n="card.docs_title">Документы для въезда</h3>
+                <p data-i18n="card.docs_text">Список документов для иностранцев.</p>
+                <a href="docs.html" data-i18n="card.go">Перейти →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3 data-i18n="card.analyze_title">ИИ-проверка пакета</h3>
+                <p data-i18n="card.analyze_text">Сроки, подписи, апостиль и чек-лист для подачи.</p>
+                <a href="analyze.html" data-i18n="card.go">Перейти →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <h3 data-i18n="card.profile_title">Профиль</h3>
+                <p data-i18n="card.profile_text">Ваши сохранённые документы.</p>
+                <a href="profile.html" data-i18n="card.go">Перейти →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 LVDOCS.AI <span class="flag-stripe"></span> <span data-i18n="footer.note">Сделано в Латвии</span>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>

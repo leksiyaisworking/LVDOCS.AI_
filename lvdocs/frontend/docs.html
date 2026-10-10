@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документы для въезда — LVDOCS.AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 3 H26 L34 11 V37 H6 Z" fill="#9E3039"/>
+                    <path d="M26 3 V11 H34 Z" fill="#7a252c"/>
+                    <rect x="6" y="20" width="28" height="5" fill="#ffffff"/>
+                    <path d="M20 13 L21.5 17 L25.5 18.5 L21.5 20 L20 24 L18.5 20 L14.5 18.5 L18.5 17 Z" fill="#ffffff"/>
+                </svg>
+                <span class="logo-text">LVDOCS<span class="ai">.AI</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+                <li><a href="check.html" data-i18n="nav.check">Проверка</a></li>
+                <li><a href="ocr.html" data-i18n="nav.ocr">Распознавание</a></li>
+                <li><a href="docs.html" class="active" data-i18n="nav.docs">Документы</a></li>
+                <li><a href="analyze.html" data-i18n="nav.analyze">ИИ-проверка</a></li>
+                <li><a href="profile.html" data-i18n="nav.profile">Профиль</a></li>
+                <li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+            </ul>
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn" data-lang="lv"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#9E3039"/><rect y="6.4" width="24" height="3.2" fill="#fff"/></svg>LV</button>
+                <button type="button" class="lang-btn" data-lang="ru"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="5.34" fill="#fff"/><rect y="5.33" width="24" height="5.34" fill="#0039A6"/><rect y="10.66" width="24" height="5.34" fill="#D52B1E"/></svg>RU</button>
+                <button type="button" class="lang-btn" data-lang="en"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#012169"/><path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="5.2"/><path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"/></svg>EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 data-i18n="docs.title">Документы для въезда в Латвию</h1>
+        <p class="lead" data-i18n="docs.lead">Полный список необходимых документов.</p>
+
+        <div class="docs-intro" data-i18n="docs.intro"></div>
+
+        <div class="docs-progress">
+            <span id="docsProgress"></span>
+            <a href="check.html" data-i18n="docs.add">Добавить документ →</a>
+        </div>
+        <p class="docs-legend" data-i18n="docs.legend"></p>
+
+        <section class="docs-category">
+            <h2>🛂 <span data-i18n="sec.short"></span> <span class="badge" data-i18n="badge.short"></span></h2>
+            <div class="doc-item" data-doc="passport">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.passport.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.passport.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="id_card">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.idcard.t"></span> <span class="required cond" data-i18n="req.applicable"></span></h4>
+                    <p data-i18n="d.idcard.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="visa_c">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.visac.t"></span> <span class="required cond" data-i18n="req.cond"></span></h4>
+                    <p data-i18n="d.visac.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="insurance">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.insurance.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.insurance.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.purpose.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.purpose.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.tickets.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.tickets.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="bank_statement">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.funds.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.funds.x"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="docs-category">
+            <h2>🎓 <span data-i18n="sec.long"></span> <span class="badge" data-i18n="badge.long"></span></h2>
+            <div class="doc-item" data-doc="passport">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.passport2.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.passport2.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="visa_d">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.visad.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.visad.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="residence">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.residence.t"></span> <span class="required cond" data-i18n="req.cond"></span></h4>
+                    <p data-i18n="d.residence.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="study_agreement pmlp_invitation">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.enroll.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.enroll.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="criminal">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.criminal.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.criminal.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.health.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.health.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="insurance">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.insurance2.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.insurance2.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.housing.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.housing.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="diploma transcript school_certificate">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.education.t"></span> <span class="required cond" data-i18n="req.cond"></span></h4>
+                    <p data-i18n="d.education.x"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="docs-category">
+            <h2>👨‍👩‍👧 <span data-i18n="sec.family"></span> <span class="badge" data-i18n="badge.family"></span></h2>
+            <div class="doc-item" data-doc="passport">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.fpassport.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.fpassport.x"></p>
+                </div>
+            </div>
+            <div class="doc-item" data-doc="birth_cert marriage_cert">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.civil.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.civil.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.invite.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.invite.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.income.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.income.x"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="docs-category">
+            <h2>🚗 <span data-i18n="sec.transport"></span> <span class="badge" data-i18n="badge.transport"></span></h2>
+            <div class="doc-item" data-doc="driver">
+                <span class="check">⬜</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.driver.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.driver.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.vehicle.t"></span> <span class="required yes" data-i18n="req.yes"></span></h4>
+                    <p data-i18n="d.vehicle.x"></p>
+                </div>
+            </div>
+            <div class="doc-item">
+                <span class="check">📌</span>
+                <div class="doc-body">
+                    <h4><span data-i18n="d.permit.t"></span> <span class="required cond" data-i18n="req.cond"></span></h4>
+                    <p data-i18n="d.permit.x"></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="docs-intro" style="border-left-color: var(--text-gray);" data-i18n="docs.contacts"></div>
+    </main>
+
+    <footer>
+        © 2026 LVDOCS.AI <span class="flag-stripe"></span> <span data-i18n="footer.note">Сделано в Латвии</span>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/i18n-extra.js"></script>
+    <script src="js/profile.js"></script>
+
+    <script>
+        // Отмечаем галочкой документы, которые уже сохранены в профиле
+        function updateDocs() {
+            const have = new Set(getProfileDocuments().map(d => d.type));
+            let total = 0, done = 0;
+            document.querySelectorAll('.doc-item[data-doc]').forEach(el => {
+                const ok = el.dataset.doc.split(' ').some(x => have.has(x));
+                total++; if (ok) done++;
+                el.classList.toggle('have', ok);
+                el.querySelector('.check').textContent = ok ? '✅' : '⬜';
+            });
+            document.getElementById('docsProgress').textContent =
+                t('docs.progress').replace('{n}', done).replace('{total}', total);
+        }
+        document.addEventListener('DOMContentLoaded', updateDocs);
+        document.addEventListener('langchange', updateDocs);
+        window.addEventListener('pageshow', updateDocs);
+    </script>
+</body>
+</html>
